@@ -87,38 +87,3 @@ src/
 4. **Category API response** — DummyJSON v2 returns an array of objects with `slug` and `name`; v1 returns strings. The code handles both formats.
 5. **Images** — Some product images from DummyJSON return 404. An `onError` fallback is implemented for both card and detail views.
 6. **Pagination reset** — Changing any filter resets to page 1, which is the expected UX behavior.
-
----
-
-## Improvements Given More Time
-
-### UX & Features
-- **Search bar** — Full-text search across product titles/descriptions using `/products/search?q=`
-- **Sort controls** — Price (low→high, high→low), rating, newest
-- **Wishlist / Compare** — Client-side with localStorage persistence
-- **Recently viewed** — Stored in localStorage, shown on detail page
-- **Image zoom** — Click-to-zoom or lens hover on detail page
-- **Skeleton for detail page** — Already implemented, but could be more granular
-- **Toast notifications** — "Added to cart", error toasts etc.
-
-### Performance
-- **React Query / SWR** — Replace manual `useEffect` fetching with proper caching, deduplication, stale-while-revalidate
-- **Virtualized list** — For very large product sets, react-window would avoid DOM overhead
-- **Image lazy loading with IntersectionObserver** — Already uses `loading="lazy"` but custom observer gives finer control
-- **Route-based code splitting** — `React.lazy()` for ListingPage and DetailPage
-
-### Code Quality
-- **TypeScript** — Type safety for product shapes, API responses, filter state
-- **Unit tests** — Jest + React Testing Library for hooks and components
-- **E2E tests** — Playwright or Cypress for filter → navigate → back flows
-- **Storybook** — Isolated component development for ProductCard, StarRating, FilterPanel
-
-### Accessibility
-- Skip-to-content link
-- ARIA live regions for filter result count updates
-- Full keyboard navigation for filter panel and image gallery
-
-### Backend / Production Concerns
-- Replace DummyJSON with a real backend that supports server-side combined filtering, sorting, and efficient pagination
-- CDN for product images
-- SEO: server-side rendering (Next.js) or static generation for product pages
