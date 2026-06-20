@@ -15,7 +15,6 @@ A clean, performant e-commerce product browser built with React, React Router, a
 
 ```bash
 git clone <your-repo-url>
-cd shopfront
 npm install
 npm start
 ```
