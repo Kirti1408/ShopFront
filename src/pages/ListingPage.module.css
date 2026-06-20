@@ -1,0 +1,156 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.mobileFilterBtn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--sidebar);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.filterBadge {
+  background: var(--accent);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.breadcrumbHome {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.breadcrumbSep {
+  color: var(--text-muted);
+}
+
+.breadcrumbCat {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.countLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  color: #991B1B;
+  margin-bottom: 24px;
+}
+
+.errorTitle {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.errorMsg {
+  font-size: 13px;
+  color: #B91C1C;
+}
+
+.retryBtn {
+  margin-left: auto;
+  background: #EF4444;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+  align-self: center;
+  transition: background var(--transition);
+}
+
+.retryBtn:hover {
+  background: #DC2626;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.emptyMsg {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .mobileFilterBtn {
+    display: flex;
+  }
+
+  .main {
+    padding: 16px 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+}
